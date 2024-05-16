@@ -1,0 +1,1 @@
+select p.drug, count(*) as prescription_count from prescriptions as p join admissions as a on p.subject_id=a.subject_id and p.hadm_id = a.hadm_id where p.starttime between a.admittime and a.admittime + interval '12 Hours' group by p.drug order by prescription_count desc, p.drug desc limit 1000 

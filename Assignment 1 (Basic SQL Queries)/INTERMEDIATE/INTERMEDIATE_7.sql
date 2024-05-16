@@ -1,0 +1,1 @@
+select subject_id, count(distinct stay_id) as total_stays, avg(los) as avg_length_of_stay  from icustays where (icustays.first_careunit like '%MICU%' or icustays.last_careunit like '%MICU%') group by subject_id having count(distinct stay_id)>=5 order by avg_length_of_stay desc, total_stays desc, subject_id desc limit 500

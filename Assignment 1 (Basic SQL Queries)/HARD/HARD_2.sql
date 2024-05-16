@@ -1,0 +1,5 @@
+with DIA as (select f.icd_code, f.icd_version, f.long_title from 
+(select d1.icd_code, d1.icd_version, COUNT(DISTINCT CASE WHEN a.hospital_expire_flag = 1 THEN (a.subject_id,a.hadm_id) END) * 100.0/ COUNT(DISTINCT (d1.subject_id, d1.hadm_id)) AS mr
+from diagnoses_icd as d1 join admissions as a on d1.subject_id = a.subject_id and d1.hadm_id = a.hadm_id group by (d1.icd_code, d1.icd_version) order by mr desc limit 245) as b join d_icd_diagnoses as f on f.icd_code= b.icd_code and f.icd_version=b.icd_version),
+PAT as (select p.subject_id, p.anchor_age, q.icd_code, q.icd_version from patients as p join (select a.subject_id, d3.icd_code, d3.icd_version from admissions as a join diagnoses_icd as d3 on a.subject_id = d3.subject_id and a.hadm_id = d3.hadm_id where a.hospital_expire_flag = 0) as q on p.subject_id = q.subject_id)
+select DIA.long_title as long_title, round(avg(PAT.anchor_age),2) as survived_avg_age from PAT join DIA on PAT.icd_code = DIA.icd_code and PAT.icd_version = DIA.icd_version group by (PAT.icd_code,PAT.icd_version,DIA.long_title) order by long_title, survived_avg_age desc

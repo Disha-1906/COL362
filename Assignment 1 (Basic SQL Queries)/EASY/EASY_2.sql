@@ -1,0 +1,1 @@
+select subject_id, count(hadm_id) as num_admissions from admissions group by subject_id order by num_admissions desc, subject_id limit 1

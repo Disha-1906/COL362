@@ -1,0 +1,1 @@
+select count(labevent_id) from labevents where flag = 'abnormal' and priority = 'ROUTINE'

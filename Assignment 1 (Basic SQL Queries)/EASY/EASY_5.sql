@@ -1,0 +1,1 @@
+select patients.subject_id, patients.anchor_age, count(stay_id) from patients join icustays on patients.subject_id = icustays.subject_id where first_careunit = 'Coronary Care Unit (CCU)' group by patients.subject_id order by count(stay_id) desc, anchor_age desc, patients.subject_id desc limit 3

@@ -1,0 +1,1 @@
+select p.subject_id, p.anchor_year, q.drug from patients as p join (select subject_id, drug from prescriptions as p group by (subject_id,drug) having count(distinct hadm_id)>1) as q on p.subject_id = q.subject_id order by p.subject_id desc, p.anchor_year desc, q.drug desc limit 1000

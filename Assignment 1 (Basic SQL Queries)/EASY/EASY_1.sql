@@ -1,0 +1,1 @@
+select count(subject_id) from patients where patients.gender = 'F' and patients.anchor_age>=18 and patients.anchor_age<=30

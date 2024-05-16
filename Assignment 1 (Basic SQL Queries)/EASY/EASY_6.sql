@@ -1,0 +1,1 @@
+select count(hadm_id) from diagnoses_icd as d join d_icd_diagnoses as i on d.icd_code = i.icd_code and d.icd_version = i.icd_version where long_title = 'Cholera due to vibrio cholerae'

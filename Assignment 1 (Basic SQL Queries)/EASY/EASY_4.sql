@@ -1,0 +1,1 @@
+select count(distinct( icd_code , icd_version)) from procedures_icd where subject_id = 10000117

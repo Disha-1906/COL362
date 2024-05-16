@@ -1,0 +1,1 @@
+select icustays.subject_id, count(distinct stay_id) as count from icustays group by subject_id having count(distinct stay_id)>=5 order by count(distinct stay_id) desc, icustays.subject_id desc limit 1000

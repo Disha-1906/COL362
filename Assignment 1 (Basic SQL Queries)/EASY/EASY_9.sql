@@ -1,0 +1,1 @@
+select count(distinct a.hadm_id) from admissions as a join labevents as l on a.subject_id = l.subject_id and a.hadm_id = l.hadm_id where l.flag = 'abnormal' and hospital_expire_flag= 1
