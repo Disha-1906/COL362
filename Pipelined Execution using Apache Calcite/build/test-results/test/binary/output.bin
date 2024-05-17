@@ -1,0 +1,68 @@
+phyRelNode PProject
+River 
+Susan 
+	Walter 
+
+Matthew 
+Penelope 
+	Sidney 
+
+Groucho 
+Gina 
+	Warren 
+Sylvester 
+Susan 
+
+Cameron 
+
+Russell 
+	Morgan 
+	Morgan 
+Harrison 
+Dan 
+Renee 
+Cuba 
+	Warren 
+Penelope 
+Liza 
+Salma 
+Julianne 
+Scarlett 
+	Albert 
+
+Frances 
+Kevin 
+Cate 
+Daryl 
+Greta 
+Jane 
+Adam 
+
+Richard 
+Gene 
+Rita 
+Ed 
+	Morgan 
+
+Lucille 
+Ewan 
+	Whoopi 
+Cate 
+Jada 
+	Angela 
+Kim 
+	Albert 
+Fay 
+Emily 
+
+Russell 
+Test passed :)
+phyRelNode PSort
+Test passed :)
+phyRelNode PSort
+Test passed :)
+phyRelNode PAggregate
+All three assertions passed 0
+%All three assertions passed 1 14596
+All three assertions passed 2
+Test passed :)
